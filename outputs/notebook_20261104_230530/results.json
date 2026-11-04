@@ -1,0 +1,124 @@
+{
+  "inputs": {
+    "photo": {
+      "file": "photo1.png",
+      "bytes": 504743,
+      "sha256": "82f1838e84b26671a81e2fd71097e9f25fe0d1abfaf3ef0ddf2de75eaa53d9e5"
+    },
+    "second_photo": {
+      "file": "photo2.jpg",
+      "bytes": 124199,
+      "sha256": "661a00573cf75f401af361a1ac2bd1a27f241f75644e45faed9fe53ef8547af1"
+    }
+  },
+  "processing": "EXIF orientation applied; image processing copies limited to 1000 px longest side; originals unchanged.",
+  "restoration": [
+    {
+      "noise": "gaussian_noise",
+      "method": "noisy",
+      "PSNR_dB": 20.2727,
+      "SSIM": 0.12843
+    },
+    {
+      "noise": "gaussian_noise",
+      "method": "median",
+      "PSNR_dB": 31.8274,
+      "SSIM": 0.70889
+    },
+    {
+      "noise": "gaussian_noise",
+      "method": "gaussian",
+      "PSNR_dB": 31.995,
+      "SSIM": 0.70271
+    },
+    {
+      "noise": "salt_pepper_noise",
+      "method": "noisy",
+      "PSNR_dB": 18.3867,
+      "SSIM": 0.2043
+    },
+    {
+      "noise": "salt_pepper_noise",
+      "method": "median",
+      "PSNR_dB": 45.1158,
+      "SSIM": 0.99109
+    },
+    {
+      "noise": "salt_pepper_noise",
+      "method": "gaussian",
+      "PSNR_dB": 29.7936,
+      "SSIM": 0.64202
+    }
+  ],
+  "segmentation": {
+    "otsu_threshold": 101.0,
+    "foreground": "light",
+    "watershed_seeds": 21,
+    "note": "Regions are algorithmic segments, not verified object counts. Use touching objects on a contrasting background and inspect over/under-segmentation."
+  },
+  "features": {
+    "hog_length": 306180,
+    "sift_keypoints": 235,
+    "matches": [
+      {
+        "experiment": "second_original",
+        "keypoints_reference": 235,
+        "keypoints_target": 1369,
+        "ratio_test_matches": 7,
+        "RANSAC_inliers": 5,
+        "inlier_ratio": 0.7143
+      },
+      {
+        "experiment": "second_rotated_90",
+        "keypoints_reference": 235,
+        "keypoints_target": 1347,
+        "ratio_test_matches": 9,
+        "RANSAC_inliers": 6,
+        "inlier_ratio": 0.6667
+      },
+      {
+        "experiment": "second_resized_70_percent",
+        "keypoints_reference": 235,
+        "keypoints_target": 877,
+        "ratio_test_matches": 6,
+        "RANSAC_inliers": 4,
+        "inlier_ratio": 0.6667
+      }
+    ],
+    "second_original_available": true
+  },
+  "detections": [
+    {
+      "input": "photo1",
+      "method": "Haar face cascade",
+      "detections": 1,
+      "labels": "face",
+      "milliseconds": 267.29
+    },
+    {
+      "input": "photo1",
+      "method": "YOLO",
+      "detections": 1,
+      "labels": "person",
+      "milliseconds": 1563.78
+    },
+    {
+      "input": "photo2",
+      "method": "Haar face cascade",
+      "detections": 1,
+      "labels": "face",
+      "milliseconds": 71.74
+    },
+    {
+      "input": "photo2",
+      "method": "YOLO",
+      "detections": 12,
+      "labels": "person, person, chair, person, chair, tie, chair, chair, chair, chair, chair, dining table",
+      "milliseconds": 45.07
+    }
+  ],
+  "pending": [
+    "15-30 second original video and its motion results required.",
+    "Suitable original touching-object photograph required for watershed."
+  ]
+}

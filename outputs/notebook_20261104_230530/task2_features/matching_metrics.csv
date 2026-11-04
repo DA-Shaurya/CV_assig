@@ -1,0 +1,4 @@
+experiment,keypoints_reference,keypoints_target,ratio_test_matches,RANSAC_inliers,inlier_ratio
+second_original,235,1369,7,5,0.7143
+second_rotated_90,235,1347,9,6,0.6667
+second_resized_70_percent,235,877,6,4,0.6667

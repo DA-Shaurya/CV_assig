@@ -1,0 +1,5 @@
+input,method,detections,labels,milliseconds
+photo1,Haar face cascade,1,face,267.29
+photo1,YOLO,1,person,1563.78
+photo2,Haar face cascade,1,face,71.74
+photo2,YOLO,12,"person, person, chair, person, chair, tie, chair, chair, chair, chair, chair, dining table",45.07

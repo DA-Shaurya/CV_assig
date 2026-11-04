@@ -1,0 +1,7 @@
+noise,method,PSNR_dB,SSIM
+gaussian_noise,noisy,20.2727,0.12843
+gaussian_noise,median,31.8274,0.70889
+gaussian_noise,gaussian,31.995,0.70271
+salt_pepper_noise,noisy,18.3867,0.2043
+salt_pepper_noise,median,45.1158,0.99109
+salt_pepper_noise,gaussian,29.7936,0.64202
